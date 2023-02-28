@@ -1,4 +1,4 @@
-let qtyLearnt = 724; // Hämtas sedan från användaren indata
+let qtyLearnt = 2200; // Hämtas sedan från användaren indata
 
 $(async function()	
 {
