@@ -12,7 +12,7 @@ $(async function()
 
 	// Hämta listan av joyo kanji
 	let joyoList = new Array();
-	await $.get("/static/data/joyo_list.json", (data) => {
+	await $.get("/static/data/joyo_list_extended.json", (data) => {
 		joyoList = data;
 	});
 	resetJoyoList(joyoList);
@@ -23,12 +23,16 @@ $(async function()
 	///////////// Bygga bygga
 	for (let i = 1; i < joyoList.grade.length; i++) {
 		let grade_section = $("<section>").addClass("grade");
-		let grade_h2 = $("<h2>").text(`Grade ${i == 7 ? "7-12" : i}`);
+		let grade_h2 = $("<h3>").text(`Grade ${i == 7 ? "7-12" : i}`);
 		let grade_kanji_container = $("<div>").addClass("kanji_container");
 
 		grade_section.append(grade_h2);
-		for (let j = 0; j < joyoList.grade[i].length; j++) {
-			grade_kanji_container.append(`<span class="kanji_item ${joyoList.grade[i][j].isActive ? 'kanji_item_active' : ''}">${joyoList.grade[i][j].kanji}</span>`);
+		for (let j = 0; j < joyoList.grade[i].length; j++) { // Det vackraste jag sett
+			grade_kanji_container.append(`<span class="kanji_item ${joyoList.grade[i][j].isActive ? 'kanji_item_active' : ''}">
+											<a href='//${joyoList.grade[i][j].jishoHref}'>
+												${joyoList.grade[i][j].kanji}
+											</a>
+										</span>`);
 		}
 		grade_section.append(grade_kanji_container);
 		$("main").append(grade_section);
@@ -44,7 +48,11 @@ function resetRtkList(rtkList) {
 function resetJoyoList(joyoList) {
 	for (let i = 1; i < joyoList.grade.length; i++)
 		for (let j = 0; j < joyoList.grade[i].length; j++)
-			joyoList.grade[i][j] = {kanji: joyoList.grade[i][j], isActive: false};
+			joyoList.grade[i][j] = {kanji: joyoList.grade[i][j].kanji, // Här känns det som att det finns optimeringar
+									strokes: parseInt(joyoList.grade[i][j].strokes),
+									jishoHref: joyoList.grade[i][j].jishoHref,
+									koohiiHref: joyoList.grade[i][j].koohiiHref,
+									isActive: false};
 }
 
 // range ex: 500 (0-500 kanji learnt)
@@ -53,8 +61,7 @@ function setLearntRtkList(rtkList, range) {
 		rtkList[i].learnt = true;
 }
 
-function compareRtkJoyo(rtkList, joyoList)
-{
+function compareRtkJoyo(rtkList, joyoList) {
 	let qtyRtkExisted = 0;
 	for (let rtk_i = 0; rtk_i < qtyLearnt; rtk_i++) {
 		for (let grade_i = 1; grade_i < joyoList.grade.length; grade_i++) {

@@ -17,7 +17,7 @@ body {
 header {
 	align-items: center;
 	text-align: center;
-	background-color: #1e1e1e;
+	background-color: #151726;
 	border-bottom: 4px #21315f solid;
 	padding: 10px;
 }
@@ -26,10 +26,22 @@ header h1 {
 	margin: 0;
 }
 
+main {
+	display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
 .grade {
 	display: flex;
 	flex-direction: column;
 	margin: 0 20px 0 20px;
+	/* width: 70%; */
+	max-width: 1120px;
+}
+
+.grade h3 {
+	margin: 20px 0 3px 0;
 }
 
 .kanji_container {
