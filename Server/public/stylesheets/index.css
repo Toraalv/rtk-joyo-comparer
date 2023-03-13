@@ -28,6 +28,29 @@ header h1 {
 
 main {
 	display: flex;
+    flex-direction: row;
+	justify-content: space-between;
+}
+
+aside {
+	height: 80%;
+	width: 220px;
+	position: sticky;
+	/* z-index: 1; */
+	top: 100px;
+	overflow-x: hidden;
+	background-color: #171717;
+	border: 2px #222222 solid;
+	border-right: none;
+	padding: 16px;
+}
+
+aside input {
+	width: 100%;
+}
+
+#grade_list {
+	display: flex;
     align-items: center;
     flex-direction: column;
 }
