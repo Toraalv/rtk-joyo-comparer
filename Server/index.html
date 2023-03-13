@@ -23,20 +23,20 @@
         <main>
             <div></div>
             <div id="grade_list">
-                <section class="grade">
+                <!-- <section class="grade">
                     <h3>Grade X</h3>
                     <div class="kanji_container">
-                        <div class="kanji_item">
+                        <div class="kanji_item" id="vilketkanjidetäryahoo">
                             <a href="//jisho.org/search/%E9%A0%B0%20%23kanji">余</a>
                         </div>
                     </div>
-                </section>
+                </section> -->
             </div>
             <aside>
                 <h5>RTK1 quantity:</h5>
                 <form>
-                    <input type="range" name="amountRange" min="0" max="2200" value="0" oninput="badTomfoolery(this)">
-                    <input type="number" name="amountInput" min="0" max="2200" value="0" oninput="badTomfoolery(this)">    
+                    <input type="range" name="qtyLearntRange" min="0" max="2200" value="0" oninput="this.form.qtyLearntInput.value=this.value">
+                    <input type="number" name="qtyLearntInput" min="0" max="2200" value="0" oninput="this.form.qtyLearntRange.value=this.value">    
                 </form>
             </aside>
         </main>
