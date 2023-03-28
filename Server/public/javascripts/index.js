@@ -47,7 +47,7 @@ $(async function()
 		// resetRtkList(rtkList); // WTF, VARFÖR SKA INTE DENNA VAR HÄR????????????????????????????????????????????????
 		setLearntRtkList(rtkList, _qtyLearnt);
 		resetJoyoList(joyoList);
-		compareRtkJoyo(rtkList, joyoList, _qtyLearnt)
+		compareRtkJoyo(rtkList, joyoList, _qtyLearnt);
 		
 
 		for (let grade_i = 1; grade_i < joyoList.grade.length; grade_i++) {
@@ -70,6 +70,11 @@ $(async function()
 		// 		}
 		// 	}
 		// }
+	});
+
+	$('[name="perday"]').on("input", (e) => {
+		let perday = (2200 - _qtyLearnt) / e.currentTarget.value;
+		$("#kanjiperday").text(perday);
 	});
 });
 
@@ -103,7 +108,12 @@ function compareRtkJoyo(rtkList, joyoList, range) {
 	for (let rtk_i = 0; rtk_i < range; rtk_i++) {
 		for (let grade_i = 1; grade_i < joyoList.grade.length; grade_i++) {
 			for (let kanji_i = 0; kanji_i < joyoList.grade[grade_i].length; kanji_i++) {
-				if (rtkList[rtk_i].kanji == joyoList.grade[grade_i][kanji_i].kanji) {
+				// if (rtkList[rtk_i].kanji == joyoList.grade[grade_i][kanji_i].kanji) {
+				// 	rtkList[rtk_i].learnt = false; // Tänkte säga att jag kanske inte ens behöver rtkList om jag ändå har heisigIndex i joyoList, men då kommer inte detta funka, kuken
+				// 	joyoList.grade[grade_i][kanji_i].isActive = true;
+				// 	qtyRtkExisted++;
+				// }
+				if (rtk_i + 1 == joyoList.grade[grade_i][kanji_i].heisigIndex) {
 					rtkList[rtk_i].learnt = false; // Tänkte säga att jag kanske inte ens behöver rtkList om jag ändå har heisigIndex i joyoList, men då kommer inte detta funka, kuken
 					joyoList.grade[grade_i][kanji_i].isActive = true;
 					qtyRtkExisted++;
