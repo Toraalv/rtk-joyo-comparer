@@ -1,3 +1,7 @@
+:root{
+	--ass_width: 13vw;
+}
+
 a {
 	text-decoration: none;
 	color: #FFFFFFDE;
@@ -29,20 +33,33 @@ header h1 {
 main {
 	display: flex;
     flex-direction: row;
+	flex-grow: 1;
 	justify-content: space-between;
 }
 
+
+
 aside {
-	height: 80%;
-	width: 220px;
-	position: sticky;
+	display: flex;
+	flex-direction: column;
+	width: var(--ass_width);
 	/* z-index: 1; */
-	top: 100px;
 	overflow-x: hidden;
 	background-color: #171717;
-	border: 2px #222222 solid;
-	border-right: none;
+	border-left: 2px #222222 solid;
 	padding: 16px;
+}
+#ass {
+	width: var(--ass_width);
+}
+
+@media screen and (max-width: 701px) {
+	main {
+	  flex-direction: column-reverse;
+	}
+	aside {
+		width: 100%;
+	}
 }
 
 aside input {

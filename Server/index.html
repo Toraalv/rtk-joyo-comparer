@@ -21,7 +21,7 @@
             <!-- <a href="add_item"><img id="peko" src="static/images/ogey_KYM_Flipped.webp" alt="Usada Pekora ogey rrat"></a> -->
         </header>
         <main>
-            <div></div>
+            <div id="ass"></div>
             <div id="grade_list">
                 <!-- <section class="grade">
                     <h3>Grade X</h3>
@@ -38,6 +38,8 @@
                     <input type="range" name="qtyLearntRange" min="0" max="2200" value="0" oninput="this.form.qtyLearntInput.value=this.value">
                     <input type="number" name="qtyLearntInput" min="0" max="2200" value="0" oninput="this.form.qtyLearntRange.value=this.value">    
                 </form>
+                <input type="number" name="perday" min="1" max="2200" value="0">
+                <span id="kanjiperday">X</span>
             </aside>
         </main>
         <script src="static/javascripts/index.js"></script>
