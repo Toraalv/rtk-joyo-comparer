@@ -4,6 +4,7 @@
 
 	--text-color: #FFFFFFDE;
 	--bkg-color: #121212;
+	--border-color: #222222;
 }
 
 
@@ -59,6 +60,7 @@ main {
     flex-direction: row;
 	flex-grow: 1;
 	justify-content: space-between;
+	padding-bottom: 36px;
 }
 
 
@@ -67,13 +69,11 @@ aside {
 	top: 33vh;
 	height: fit-content;
 	width: var(--ass_width);
-	/* z-index: 1; */
 	overflow-x: hidden;
 	background-color: #171717;
-	border-top: 2px #222222 solid;
-	border-right: 2px #222222 solid;
-	border-bottom: 2px #222222 solid;
-	border-left: 2px #222222 solid;
+	border-top: 2px var(--border-color) solid;
+	border-bottom: 2px var(--border-color) solid;
+	border-left: 2px var(--border-color) solid;
 	padding: var(--aside-padding);
 }
 #ass {
@@ -89,20 +89,21 @@ aside>p {
 	font-size: 6pt;
 }
 aside input {
-	/* width: 100%; */
 	width: 100%;
 	border-radius: 0;
 }
 
 
-@media screen and (max-width: 701px) {
+@media screen and (max-width: 982px) {
 	main {
 	  flex-direction: column-reverse;
 	}
 	aside {
 		width: 100%;
+		position: unset;
 		border: none;
-		overflow-x:scroll;
+		border-bottom: 2px var(--border-color) solid;
+		overflow-x: scroll;
 	}
 	#ass {
 		display: none;

@@ -45,7 +45,7 @@ $(async function()
 		_qtyLearnt = e.currentTarget.value;
 
 		let perday = (2200 - _qtyLearnt) / $('[name="perday"]')[0].valueAsNumber;
-		$("#kanjiperday").text(perday);
+		$("#kanjiperday").text(Math.round(perday));
 		
 		// resetRtkList(rtkList); // WTF, VARFÖR SKA INTE DENNA VAR HÄR????????????????????????????????????????????????
 		setLearntRtkList(rtkList, _qtyLearnt);
@@ -77,7 +77,7 @@ $(async function()
 
 	$('[name^="perday"]').on("input", (e) => {
 		let perday = (2200 - _qtyLearnt) / e.currentTarget.value;
-		$("#kanjiperday").text(perday);
+		$("#kanjiperday").text(Math.round(perday));
 	});
 });
 
