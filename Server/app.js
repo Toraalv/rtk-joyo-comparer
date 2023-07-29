@@ -12,6 +12,10 @@ app.get("/", (req, res) =>
 	res.sendFile(__dirname + "/index.html");
 });
 
+app.get("/ogey", (req, res) => {
+    res.sendFile(__dirname + "/ogey.html")
+});
+
 app.all("*", (req, res) => { // for everything else
 	console.log("sussy sus", req);
     res.send("<h1><b>404 not found</h1>");

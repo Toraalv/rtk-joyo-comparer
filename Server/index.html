@@ -16,9 +16,9 @@
     </head>
     <body>
         <header>
-            <!-- <a href="/"><img src="static/images/ogey_KYM.png" alt="Start page"></a> -->
-            <h1>RTK Joyo comparer</h1>
-            <!-- <a href="add_item"><img id="peko" src="static/images/ogey_KYM_Flipped.webp" alt="Usada Pekora ogey rrat"></a> -->
+            <a href="https://toralv.dev"><img src="static/images/toralv.png" alt="Start page"></a>
+            <a href="/"><h1>RTK Joyo comparer</h1></a>
+            <a href="ogey"><img id="peko" src="static/images/ogey_KYM_Flipped.webp" alt="Usada Pekora ogey rrat"></a>
         </header>
         <main>
             <div id="ass"></div>
@@ -34,12 +34,18 @@
             </div>
             <aside>
                 <h5>RTK1 quantity:</h5>
+                <p><i>(i.e how much you have learnt)</i></p> <!-- todo: make this hoverable -->
                 <form>
+                    <input type="number" name="qtyLearntInput" min="0" max="2200" value="0" oninput="this.form.qtyLearntRange.value=this.value">
                     <input type="range" name="qtyLearntRange" min="0" max="2200" value="0" oninput="this.form.qtyLearntInput.value=this.value">
-                    <input type="number" name="qtyLearntInput" min="0" max="2200" value="0" oninput="this.form.qtyLearntRange.value=this.value">    
                 </form>
-                <input type="number" name="perday" min="1" max="2200" value="0">
-                <span id="kanjiperday">X</span>
+                <h5>Kanji/day:</h5>
+                <form>
+                    <input type="number" name="perday" min="1" max="2200" value="0" oninput="this.form.perdayRange.value=this.value">
+                    <input type="range" name="perdayRange" min="1" max="50" value="0" oninput="this.form.perday.value=this.value">
+                </form>
+                <p>Days until done:</p>
+                <span id="kanjiperday">2200</span>
             </aside>
         </main>
         <script src="static/javascripts/index.js"></script>

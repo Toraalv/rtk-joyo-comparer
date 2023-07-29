@@ -43,6 +43,9 @@ $(async function()
 	// Får denna ligga här? Hmmmm
 	$('[name^="qtyLearnt"]').on("input", (e) => { // Så denna skiten uppdaterar vilka kanjin som ska vara "aktiva" LÖPANDE (optimering i väggen)
 		_qtyLearnt = e.currentTarget.value;
+
+		let perday = (2200 - _qtyLearnt) / $('[name="perday"]')[0].valueAsNumber;
+		$("#kanjiperday").text(perday);
 		
 		// resetRtkList(rtkList); // WTF, VARFÖR SKA INTE DENNA VAR HÄR????????????????????????????????????????????????
 		setLearntRtkList(rtkList, _qtyLearnt);
@@ -72,7 +75,7 @@ $(async function()
 		// }
 	});
 
-	$('[name="perday"]').on("input", (e) => {
+	$('[name^="perday"]').on("input", (e) => {
 		let perday = (2200 - _qtyLearnt) / e.currentTarget.value;
 		$("#kanjiperday").text(perday);
 	});
