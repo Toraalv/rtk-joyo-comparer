@@ -7,13 +7,12 @@ const fs = require("fs");
 app.use("/static", express.static(path.join(__dirname, "public")));
 
 
-app.get("/", (req, res) =>
-{
-	res.sendFile(__dirname + "/index.html");
+app.get("/", (req, res) => {
+	res.sendFile(__dirname + "/public/html/index.html");
 });
 
 app.get("/ogey", (req, res) => {
-    res.sendFile(__dirname + "/ogey.html")
+    res.sendFile(__dirname + "/public/html/ogey.html")
 });
 
 app.all("*", (req, res) => { // for everything else
