@@ -1,0 +1,12 @@
+{
+	"general": {
+		"placeholder": "placeholder",
+		"ieLearnt": "i.e how much you have learnt",
+		"rtkQty": "RTK1 quantity",
+		"kanji/day": "Kanji/day",
+		"daysDone": "Days until done",
+		"grade": "grade",
+		"grades": "grades",
+		"options": "options"
+	}
+}

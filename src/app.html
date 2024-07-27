@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en" style="background-color: #000">
+	<head>
+		<meta charset="utf-8" />
+		<title>RTK1 Jōyō Comparer</title>
+		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta property="og:title" content="RTK1 Jōyō Comparer">
+		<meta property="og:type" content="website">
+		<meta property="og:image" content="%sveltekit.assets%/favicon.png">
+		<meta property="og:image:width" content="200px">
+		<meta property="og:image:height" content="200px">
+		<meta property="og:image:type" content="image/png">
+		<meta property="og:url" content="https://rtk-joyo-comparer.toralv.dev">
+		<meta property="og:description" content="This site visually reflects your RTK1 progress through the list of Jōyō kanji.">	
+		<meta name="theme-color" content="#6a3cbf">
+		<style>
+			@font-face {
+				font-family: swaywm_monospace;
+				src: url("/fonts/DejaVuSans/DejaVuSansMono.ttf") format("truetype");
+				font-weight: normal;
+			}
+			@font-face {
+				font-family: DejaVuSans;
+				src: url("/fonts/DejaVuSans/DejaVuSans.ttf") format("truetype");
+				font-weight: normal;
+			}
+			@font-face {
+				font-family: swaywm_monospace;
+				src: url("/fonts/DejaVuSans/DejaVuSansMono-Bold.ttf") format("truetype");
+				font-weight: bold;
+			}
+
+			:root {
+				--bg: #000000;
+				--box_bg: #000000;
+				--box_bg_H: #4c4c4c;
+				--border: #6a3cbf;
+				--border_H: #4c4c4c;
+				--text: #dedede;
+				--d_text: #9e9e9e;
+				--link: #3366CC;
+				--accent: #6a3cbf;
+				--error: #860000;
+				--warning: #865800;
+				--info: #3366CC;
+				
+				--focused_indicator: #9D66FF;
+				--focused_inactive-indicator: #484e50;
+				
+				--unfocused_border: #333333;
+				--unfocused_background: #222222;
+				--unfocused_text: #9e9e9e;
+				--unfocused_indicator: #292d2e;
+			}
+
+			html {
+				background-color: var(--bg);
+				color: var(--text);
+				font-family: 'swaywm_monospace', monospace, sans-serif;
+				font-weight: bold;
+			}
+
+			body {
+				display: flex;
+				flex-direction :row;
+				justify-content: space-between;
+				height: 100vh;
+				margin: 0;
+				padding: 0;
+			}
+
+			h1, h2, h3, h4, h5, h6 {
+				margin: 0;
+			}
+			
+			a {
+				text-decoration: none;
+				color: var(--link);
+			}
+		</style>
+		%sveltekit.head%
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">%sveltekit.body%</div>
+	</body>
+</html>

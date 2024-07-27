@@ -1,0 +1,12 @@
+{
+	"general": {
+		"placeholder": "placeholder",
+		"ieLearnt": "d.v.s hur många du lärt dig",
+		"rtkQty": "RTK1 mängd",
+		"kanji/day": "Kanji/dag",
+		"daysDone": "dagar till klar",
+		"grade": "årskurs",
+		"grades": "årskurser",
+		"options": "inställningar"
+	}
+}

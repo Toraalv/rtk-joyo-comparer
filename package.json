@@ -1,0 +1,24 @@
+{
+	"name": "rtk-joyo-comparer",
+	"version": "0.0.1-svelte",
+	"private": true,
+	"scripts": {
+		"dev": "APP_ENV=dev vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"test": "vitest",
+		"deploy:prod": "vite build && vite preview --host"
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-auto": "^3.0.0",
+		"@sveltejs/kit": "^2.0.0",
+		"@sveltejs/vite-plugin-svelte": "^3.0.0",
+		"svelte": "^4.2.7",
+		"vite": "^5.0.3",
+		"vitest": "^1.2.0"
+	},
+	"type": "module",
+	"dependencies": {
+		"svelte-i18n": "^4.0.0"
+	}
+}
