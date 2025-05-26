@@ -9,7 +9,6 @@ import sv from "./sv.json";
 addMessages("en", en);
 addMessages("sv", sv);
 
-
 init({
 	fallbackLocale: defaultLocale,
 	initialLocale: browser ? window.navigator.language : defaultLocale,

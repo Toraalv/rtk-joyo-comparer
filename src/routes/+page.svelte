@@ -7,9 +7,9 @@
 
 	const HEISIG_LEN = 2200;
 	
-	let qtyLearnt = 0;
-	let perDay = 1;
-	let active = new Array(HEISIG_LEN);
+	let qtyLearnt = $state(0);
+	let perDay = $state(1);
+	let active = $state(new Array(HEISIG_LEN));
 
 	const updateIndex = () => {
 		active[qtyLearnt] = true;
@@ -20,12 +20,12 @@
 	}
 </script>
 
-<SwayWindow title="{$_('general.options')}" mainStyle="max-width: 300px; min-width: 300px">
+<SwayWindow title={$_("general.options")} mainStyle="max-width: 300px; min-width: 300px">
 	<h5 style="margin: 0;">{$_("general.rtkQty")}:</h5>
 	<p style="margin: 0; font-size: 10pt;"><i>({$_("general.ieLearnt")})</i></p> <!-- todo: make this hoverable -->
 	<form style="">
-		<input type="number" bind:value={qtyLearnt} min="0" max={HEISIG_LEN} on:input={updateIndex}/>
-		<input type="range" bind:value={qtyLearnt} min="0" max={HEISIG_LEN} on:input={updateIndex}/>
+		<input type="number" bind:value={qtyLearnt} min="0" max={HEISIG_LEN} oninput={updateIndex}/>
+		<input type="range" bind:value={qtyLearnt} min="0" max={HEISIG_LEN} oninput={updateIndex}/>
 	</form>
 	<div style="height: 1px; background-color: var(--unfocused_border);	margin: 8px 0 8px 0;"></div>
 	<h5>{$_("general.kanji/day")}:</h5>
@@ -36,9 +36,9 @@
 	<h5>{$_("general.daysDone")}: {Math.round((HEISIG_LEN - qtyLearnt) / perDay)}</h5>
 </SwayWindow>
 
-<SwayWindow title="{$_('general.grades')}">
+<SwayWindow title={$_("general.grades")}>
 	{#each joyoIndex.grades as grade, i}
-		<Grade title="{$_('general.grade')} {i == 6 ? '7-12' : i + 1}">
+		<Grade title="{$_("general.grade")} {i == 6 ? "7-12" : i + 1}">
 			{#each grade as kanji}
 				<a class={active[kanji.heisigIndex - 1] == true ? "kanji active" : "kanji"} href="https://{kanji.jishoHref}">{kanji.kanji}</a>
 			{/each}
