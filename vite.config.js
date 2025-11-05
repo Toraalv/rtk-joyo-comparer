@@ -19,8 +19,8 @@ export default defineConfig(() => {
 			server: {
 				port: PORT,
 				https: {
-					key:  fs.readFileSync("/etc/letsencrypt/live/rtk-joyo-comparer.toralv.dev/privkey.pem"),
-					cert: fs.readFileSync("/etc/letsencrypt/live/rtk-joyo-comparer.toralv.dev/cert.pem")
+					key:  fs.readFileSync(process.env.HOME + "/.certs/rtk-joyo-comparer.toralv.dev/privkey.pem"),
+					cert: fs.readFileSync(process.env.HOME + "/.certs/rtk-joyo-comparer.toralv.dev/cert.pem")
 				},
 
 			},
