@@ -7,18 +7,18 @@
 		"dev": "APP_ENV=dev vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
-		"test": "vitest",
 		"deploy:prod": "vite build && vite preview --host"
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-auto": "^3.3.1",
+		"@sveltejs/adapter-auto": "^7.0.1",
 		"@sveltejs/kit": "^2.70.2",
-		"@sveltejs/vite-plugin-svelte": "^4.0.4",
+		"@sveltejs/vite-plugin-svelte": "^7.2.0",
 		"svelte": "^5.56.8",
-		"vite": "^5.4.21"
+		"vite": "^8.2.0"
 	},
 	"type": "module",
 	"dependencies": {
-		"svelte-i18n": "^4.0.1"
+		"svelte-i18n": "^4.0.1",
+		"vitest": "^4.1.10"
 	}
 }
